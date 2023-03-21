@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import img1 from './stack.jpg'
 import { RxDashboard } from 'react-icons/rx';
 import { CiUser } from 'react-icons/ci';
-import { RiFilePaper2Fill, RiFilePaperFill } from "react-icons/ri";
+import { RiFilePaper2Fill } from "react-icons/ri";
 
 const Dashlayout = () =>
 {
