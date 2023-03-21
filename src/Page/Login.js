@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../Redux/AuthSlice';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { singInuser } from '../Redux/AuthSlice';
 
 const Login = () => {
     {
         const [ error, setError ] = useState('');
-        const { register, formState: { errors }, handleSubmit } = useForm();
+        const { register, formState: { errors }, handleSubmit , reset} = useForm();
         const dispatch = useDispatch();
     
         const [checked , setChecked] = useState(false) ; 
     
         const loginSubmit = (data) =>
         {
-            console.log(data)
+           dispatch(singInuser(data))
+           reset() ; 
+         const output =   localStorage.getItem('token')
+         console.log(output)
         }
     
         const acceptHandle =(event) => {

@@ -7,14 +7,15 @@ import { useForm } from 'react-hook-form';
 const Register = () =>
 {
     const [ error, setError ] = useState('');
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit , reset} = useForm();
     const dispatch = useDispatch();
 
     const [checked , setChecked] = useState(false) ; 
 
     const loginSubmit = (data) =>
     {
-        console.log(data)
+       dispatch(registerUser(data)) 
+       reset()
     }
 
     const acceptHandle =(event) => {
