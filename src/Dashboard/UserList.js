@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { FaRegBell } from "react-icons/fa";
 import image from './profile.jpg'
+import { Link } from 'react-router-dom';
 
 const UserList = () =>
 {
@@ -24,13 +25,15 @@ const UserList = () =>
                     input-bordered rounded-md w-96 " />
                 </div>
                 <div className='flex justify-center items-center'>
-                    
-                    <FaRegBell  className='text-3xl mr-3'/>
+                    <Link to='/signin' className='text-xl mr-3'>SignIn</Link>
+                    <Link to='/register' className='text-xl mr-3'>SignUp</Link>
+                    <FaRegBell className='text-3xl mr-3' />
                     <div className="avatar">
-  <div className="w-12 rounded-full">
-    <img src={image} alt=''/>
-  </div>
-</div>
+                        <div className="w-12 rounded-full">
+                            <img src={ image } alt='' />
+                        </div>
+
+                    </div>
                 </div>
             </div>
             <h1 className='text-4xl font-semibold text-slate-500 my-8'>Users List</h1>

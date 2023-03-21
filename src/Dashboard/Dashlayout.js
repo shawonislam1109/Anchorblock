@@ -12,7 +12,7 @@ const Dashlayout = () =>
             <div className=' col-span-3 '>
                 <div className='flex items-center'>
                     <img className='w-24 h-24' src={ img1 } alt="" />
-                    <h1 className='text-4xl font-bold text-slate-500'>Stack</h1>
+                    <Link to='/' className='text-4xl font-bold text-slate-500'>Stack</Link>
                 </div>
                 <div className='ml-3'>
                     <p className='mt-9  text-xl tracking-normal font-medium text-slate-400'>PAGES</p>

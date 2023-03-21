@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../Redux/AuthSlice';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import img1 from './stack.jpg'
 
 const Register = () =>
 {
@@ -21,9 +22,15 @@ const Register = () =>
     const acceptHandle =(event) => {
         setChecked(event.target.checked)
     }
+   
 
     return (
-        <div className=' flex  justify-center items-center mt-9'>
+       <div>
+        <div className='flex items-center'>
+                    <img className='w-24 h-24' src={ img1 } alt="" />
+                    <Link to='/' className='text-4xl font-bold text-slate-500'>Stack</Link>
+                </div>
+         <div className=' flex  justify-center items-center mt-9'>
             <div className='w-96 md:w-1/2 p-9 rounded-md shadow-sm '>
                 <h1 className='text-3xl text-center font-bold text-slate-600'> Getting started  </h1>
                 <p className='text-center mt-3 font-semibold text-slate-600'>Create an account to contiune</p>
@@ -78,6 +85,7 @@ const Register = () =>
                 <h1 className='text-center mt-5 text-xl text-slate-500'>All Ready have an account? <Link className='text-blue-600' to='/signin'>Sign In</Link></h1>
             </div>
         </div>
+       </div>
     );
 };
 

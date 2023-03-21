@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { singInuser } from '../Redux/AuthSlice';
+import img1 from './stack.jpg'
 
 const Login = () => {
     {
@@ -16,16 +17,21 @@ const Login = () => {
         {
            dispatch(singInuser(data))
            reset() ; 
-         const output =   localStorage.getItem('token')
-         console.log(output)
         }
-    
+        
         const acceptHandle =(event) => {
             setChecked(event.target.checked)
         }
-    
+        
+        const output =   localStorage.getItem('token')
+        console.log(output)
         return (
-            <div className=' flex  justify-center items-center mt-9'>
+           <div>
+             <div className='flex items-center'>
+                    <img className='w-24 h-24' src={ img1 } alt="" />
+                    <Link to='/' className='text-4xl font-bold text-slate-500'>Stack</Link>
+                </div>
+             <div className=' flex  justify-center items-center mt-9'>
                 <div className='w-96 md:w-1/2 p-9 rounded-md shadow-sm '>
                     <h1 className='text-3xl text-center font-bold text-slate-600'> Getting started  </h1>
                     <p className='text-center mt-3 font-semibold text-slate-600'>Welcome back you've been  missed</p>
@@ -52,7 +58,7 @@ const Login = () => {
                                     // pattern: { value: /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/, message: 'password must be strong' }
                                 },
     
-                            ) } type="password" placeholder="Create Password" className="input  w-full mt-3 py-8 text-xl rounded-lg" />
+                            ) } type="password" placeholder=" Password" className="input  w-full mt-3 py-8 text-xl rounded-lg" />
     
                             { errors.password && <p role='alert' className='text-red-500'>{ errors.password?.message }</p> }
     
@@ -74,6 +80,7 @@ const Login = () => {
                     <h1 className='text-center mt-5 text-xl text-slate-500'>Don't have account yet? <Link className='text-blue-600' to='/register'>Sign Up</Link></h1>
                 </div>
             </div>
+           </div>
         );
     };
     
